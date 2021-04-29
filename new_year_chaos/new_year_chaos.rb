@@ -1,19 +1,11 @@
 def new_year_chaos(q)
-  bribes = 0
-  q_sorted = q.sort
-  q_sorted.each do |vs|
-    q.each_with_index do |v, i|
-      if v != i + 1
-        # Not sure...
-        dif = v - vs
-        if dif.positive?
-          # should upgrade only the bribed ones
-          bribes = dif
-        elsif dif.positive? && dif > 3
-          bribes = "Too chaotic"
-        end
-      end
+  counter = 0
+  q.each_with_index do |number, index|
+    if number - (index + 1) > 2
+      return "Too chaotic"
+    else
+      number - (index + 1) < 0 ? next : counter += number - (index + 1)
     end
   end
-  bribes
+  counter
 end

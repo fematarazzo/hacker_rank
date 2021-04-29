@@ -19,6 +19,15 @@ describe "new year chaos" do
     expect(actual).to eq(expected)
   end
 
+  it "counts bribes number with 6 bribes, returns number" do
+    q = [2, 1, 5, 3, 4, 7, 6, 10, 9, 8]
+    actual = new_year_chaos(q) # Calling your code
+    expected = 6 # What we expect
+
+    # Now you can use RSpec to compare both:
+    expect(actual).to eq(expected)
+  end
+
   it "test if bribes > 3, returns 'too chaotic'" do
     q = [4,1,2,3]
     actual = new_year_chaos(q) # Calling your code
